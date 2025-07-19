@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon"
+        href="data:image/jpeg;base64,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">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            letter-spacing: 2px;
+        }
+
+        body {
+            background-color: #e6e7ee;
+        }
+
+        .box {
+            margin-top: 150px;
+        }
+
+        .border-botto {
+            border-bottom: 2px solid blueviolet;
+        }
+
+        i {
+            color: blueviolet;
+            font-size: 3rem;
+        }
+
+        .pass-box {
+            position: relative;
+            width: 70%;
+            border-radius: 4px;
+            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+        }
+
+        .pass-box input {
+            position: absolute;
+            background: transparent;
+            height: 100%;
+            width: 60%;
+            top: 0;
+            left: 0;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            padding: 0 20px;
+        }
+
+        .pass-box i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .pass-box i:hover {
+            color: #b8b9be;
+        }
+
+        .generate-pass {
+            max-width: fit-content;
+            display: inline-block;
+            border-radius: 4px;
+            box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;
+        }
+
+        .generate-pass p {
+            text-wrap: nowrap;
+        }
+
+        .generate-pass:hover,
+        .pass-box:hover {
+            box-shadow: inset 3px 3px 6px #b8b9be, inset -3px -3px 6px #ffffff;
+        }
+
+        /* for small screen */
+        @media (max-width: 600px) {
+            body {
+                padding-left: 10px;
+            }
+
+            .pass-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box container d-flex justify-content-center align-items-baseline">
+        <div class="row">
+            <h1 class="fs-1 text-uppercase fw-bold">Random <br> <span class="border-botto">Password Generator</span>
+            </h1>
+            <div class="pass-box flex p-5 mt-4 border">
+                <input type="text" id="Password" placeholder="Password" id="Password">
+                <i class="fa-solid fa-copy mx-2" id="copy" onclick="copyPassword()"></i>
+            </div>
+            <div class="generate-pass d-flex p-2 border mt-4" id="generate-pass" onclick="createPassword()">
+                <i class="fa-solid fa-bolt mx-2"></i>
+                <p class="fs-3 fw-bold">Generate Password</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+    const passwordBox = document.getElementById("Password");
+    const length = 12;
+
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz"
+    const number = "0123456789"
+    const symbols = "!@#$%^&*_+{}[]|:';"
+    const allChars = upperCase + lowerCase + number + symbols;
+
+    function createPassword() {
+        let password = "";
+        password += upperCase[Math.floor(Math.random() * upperCase.length)];
+        password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+        password += number[Math.floor(Math.random() * number.length)];
+        password += symbols[Math.floor(Math.random() * symbols.length)];
+
+        while (length > password.length) {
+            password += allChars[Math.floor(Math.random() * allChars.length)];
+        }
+
+        passwordBox.value = password
+    }
+
+
+    function copyPassword() {
+        passwordBox.select();
+        document.execCommand("copy");
+    }
+
+</script>
+
+</html>
